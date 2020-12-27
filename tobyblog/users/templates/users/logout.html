@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid" id="jtron">
+    <div class="container">
+        <h1 class="display-4s"></h1>
+        <h1 class="display-4s">Steamagine | Logged out</h1>
+    </div>
+</div>
+
+
+<div class="container" id="mediacontent">
+    <p>You have succesfully logged out of the Steamagine Blog.</p>
+    <p>Want to Log back in? <a href="{% url 'login'%}">Login</a></p>
+</div>
+
+
+<style>
+    #mediacontent {
+        align-items: center;
+        text-align: center;
+    }
+</style>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags%}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid" id="jtron">
+    <div class="container">
+        <h1 class="display-4s"></h1>
+        <h1 class="display-4s">Steamagine | Delete Post</h1>
+        <p> Are you sure you want to delete the post?</p>
+    </div>
+</div>
+
+<div id="mediacontent">
+    <div class="content-selection" >
+        <form method="POST">
+
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"> Are you sure you want to delete the post: "{{ object.title }}"</legend>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit"> Yes, Delete </button>
+                <a class="btn btn-outline-secondary" href="{% url 'blog-detial' object.id %}">No, Cancel </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    #mediacontent {
+        color: black;
+        width: 60%;
+        align-content: center;
+        margin: auto;
+        padding: 10px;
+        align-content: center;
+        text-align: center;
+    }
+</style>
+
+
+
+{% endblock content %}

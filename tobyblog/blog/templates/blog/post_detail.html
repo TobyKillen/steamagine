@@ -1,0 +1,51 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid" id="jtron">
+    <div class="container">
+        <h1 class="display-4s"></h1>
+        <h1 class="display-4s">Steamagine | Blog {{object.id}}</h1>
+        <p>{{ post.title }}</p>
+    </div>
+</div>
+
+
+
+
+<div class="container" id="mediacontent">
+    <div class="row">
+        <div id="leftcontent" class="col-xs-6 col-md-4">
+
+            <img class="rounded-circle" src="{{ object.author.profile.image.url }}" alt="">
+            <br>
+            <br>
+            <p>Post Created by:</p>
+            <a id="authordatetime" href="{% url 'user-posts' post.author.username %}"> {{ post.author}} </a>
+            <p id="authordatetime"> {{ post.date_time|date:"d F, Y | H:i:s A "}}</p>
+            {% if object.author == user %}
+            <a class="btn btn-secondary" href="{% url 'blog-update' object.id %}"> Update Post</a>
+            <a class="btn btn-danger" href="{% url 'blog-delete' object.id %}"> Delete Post</a>
+                        <br>
+                        <br>
+            {% endif %}
+
+        </div>
+        <div class="col-xs-12 col-md-8">
+            <h1 class="mt-0 mb-5" id="mediatitle"><a href="{% url 'blog-detial' post.id %}">{{ post.title }}</a></h1>
+            <p id="content">{{ post.content }}</p>
+        </div>
+    </div>
+</div>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+{%endblock content%}

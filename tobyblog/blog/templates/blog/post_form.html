@@ -1,0 +1,57 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags%}
+{% block content %}
+
+
+<div class="jumbotron jumbotron-fluid" id="jtron">
+    <div class="container">
+        <h1 class="display-4s"></h1>
+        <h1 class="display-4s">Steamagine | Submit Post</h1>
+        <p> Create and submit a post to Steamagine. </p>
+    </div>
+</div>
+
+<div id="formcontent">
+    <div class="content-selection">
+        <form method="POST">
+
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"> Submit a Post.</legend>
+
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit"> Post </button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    
+    #formcontent {
+        color: black;
+        width: 60%;
+        align-content: center;
+        margin: auto;
+        padding: 30px;
+        border-style: solid;
+        border-color: rgb(100, 100, 100);
+        border-radius: 80px;
+    }
+
+    @media (max-width: 600px) {
+        #formcontent {
+            width: 80%;
+        }
+
+    }
+
+
+</style>
+
+
+
+{% endblock content %}

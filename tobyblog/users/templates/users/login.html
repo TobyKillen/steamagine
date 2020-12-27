@@ -1,0 +1,45 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags%}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid" id="jtron">
+    <div class="container">
+        <h1 class="display-4s"></h1>
+        <h1 class="display-4s">Steamagine | Login</h1>
+        <p> Login to the Steamagine Blog.</p>
+    </div>
+</div>
+
+<div id="formcontent">
+    <div class="content-selection">
+        <form method="POST">
+
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Login</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <p>Don't have an account? <a href="{% url 'register'%}">Register</a>
+
+                    <br>
+                    <br>
+                    <button class="btn btn-outline-info" type="submit"> Login </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    #formcontent {
+        color: black;
+        width: 40%;
+        align-content: center;
+        margin: auto;
+        padding: 10px;
+    }
+</style>
+
+
+
+{% endblock content %}
