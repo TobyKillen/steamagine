@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT tobyblog.wsgi
+web: gunicorn tobyblog.wsgi --log-file
