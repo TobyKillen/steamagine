@@ -55,9 +55,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tobyblog.urls'
 
-TEMPLATE_DIRS = (
-    os.path.join(SETTINGS_PATH, 'templates'),
-)
 
 TEMPLATES = [
     {
