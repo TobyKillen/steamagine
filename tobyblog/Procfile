@@ -1,1 +1,1 @@
-web: gunicorn tobyblog.wsgi --log-file
+web: gunicorn tobyblog.wsgi
